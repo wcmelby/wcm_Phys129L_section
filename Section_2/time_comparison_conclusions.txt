@@ -1,0 +1,4 @@
+As you can see in the Figure "convex_hull_time_comparison.png", the amount of time needed to find the convex hull of a point cloud 
+tends to increase as the number of points increases, in all four methods. There are only two notable exceptions: both Graham scan 
+and Jarvis march both decrease time needed at large number of points n=1000. In general, the monotone chain seems to be fastest in 
+all cases. Also, note that the axes are logarithmic, so the time needed increases as a power law fuction of n. 
