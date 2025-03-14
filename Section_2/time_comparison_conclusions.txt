@@ -2,3 +2,18 @@ As you can see in the Figure "convex_hull_time_comparison.png", the amount of ti
 tends to increase as the number of points increases, in all four methods. There are only two notable exceptions: both Graham scan 
 and Jarvis march both decrease time needed at large number of points n=1000. In general, the monotone chain seems to be fastest in 
 all cases. Also, note that the axes are logarithmic, so the time needed increases as a power law fuction of n. 
+
+
+For the point cloud with values from -5 to 5, the overall times look similar, on the order of 10^-4 s for low n and 10^-2 s for high n. 
+This indicates that variance does not impact the time complexity of these functions. 
+
+The Gaussian point distribution with variance 1 also has a similar time. 
+
+When generating 100 point clouds with n=50 using a Gaussian distribution, the runtime histogram looks like a delta function, with 
+almost all the values falling within the same bin. Each method has a few outliers though of trials that took much longer than average. 
+The Graham scan has the greatest spread in times, which almost follows an exponential decay shape. 
+Convex Hull Algorithm Runtime Analysis (n=50, 100 trials):
+Graham Scan: Fastest = 0.000135 sec, Slowest = 0.000828 sec
+Jarvis March: Fastest = 0.000343 sec, Slowest = 0.010518 sec
+Quickhull: Fastest = 0.000264 sec, Slowest = 0.008309 sec
+Monotone Chain: Fastest = 0.000156 sec, Slowest = 0.004876 sec
